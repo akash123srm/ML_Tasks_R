@@ -38,9 +38,10 @@ pairs.panels(final_data)
 
 library(caret)
 
+inTrain <- createDataPartition(y=final_data$diagnosis ,p=0.7,list=FALSE)
 training <- final_data[inTrain,]
 testing <- final_data[-inTrain,]
-dim(training);dim(testing)
+
 
 
 predlist <- c("bagFDA", #Bagging
